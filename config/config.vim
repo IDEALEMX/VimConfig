@@ -18,3 +18,5 @@ endif
 set undodir=~/.vim/undodir  " Tell Vim where to store history
 set undofile                " Automatically save and restore the undo history
 
+" Netrw explorer
+let g:netrw_banner = 0

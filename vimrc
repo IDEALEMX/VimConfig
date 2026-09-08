@@ -1,11 +1,15 @@
-so ~/vim/plugins.vim
+so ~/vim/config/plugins.vim
 
 "Pluggin configs
-so ~/vim/which-key.vim
+so ~/vim/config/which-key.vim
 
-so ~/vim/config.vim
-so ~/vim/colors.vim
-so ~/vim/keybinds.vim
+"General confog
+so ~/vim/config/config.vim
+so ~/vim/config/colors.vim
+so ~/vim/config/keybinds.vim
 
-so ~/vim/lsp.vim
+so ~/vim/config/lsp.vim
 
+"Custom script
+so ~/vim/config/notetaker.vim
+so ~/vim/sessions/manager.vim
