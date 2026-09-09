@@ -1,7 +1,7 @@
 let mapleader = " "
 
 " Setup Which key
-set timeoutlen=0
+set timeoutlen=500
 nnoremap <silent> <leader> :WhichKey '<Space>'<CR>
 vnoremap <silent> <leader> :WhichKeyVisual '<Space>'<CR>
 

@@ -1,4 +1,7 @@
-nnoremap ,s :call SessionMenu()<CR>
+nnoremap ,sf :call SessionMenu()<CR>
+nnoremap ,sr :so ~/vim/sessions/recover.vim<CR>
+
+autocmd VimLeavePre * mksession! ~/vim/sessions/recover.vim
 
 function LoadSession()
     if line('.') isnot 1
@@ -26,6 +29,7 @@ function SessionMenu()
     "" Parse links
     normal! /manager.vimVd
     normal! :%s/\.vim//
+    2
 
     " Keybindings
     nnoremap <buffer> q :bd<CR>

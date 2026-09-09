@@ -62,6 +62,10 @@ let g:which_key_local_map["n"] = {
             \ 'i'    : "Insert Tag",
             \}
 
-let g:which_key_local_map["s"] = 'Sessions'
+let g:which_key_local_map["s"] = {
+            \ 'name' : "Session",
+            \ 'f'    : "Find",
+            \ 'r'    : "Recover",
+            \}
 
 call which_key#register(',', "g:which_key_local_map", 'n') 
