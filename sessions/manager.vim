@@ -1,7 +1,19 @@
 nnoremap ,sf :call SessionMenu()<CR>
 nnoremap ,sr :so ~/vim/sessions/recover.vim<CR>
 
-autocmd VimLeavePre * mksession! ~/vim/sessions/recover.vim
+let g:has_w = v:false
+
+autocmd SessionLoadPost * let g:has_w = v:false
+
+autocmd BufWritePost * let g:has_w = v:true
+
+function s:SaveRecoverCond()
+    if g:has_w
+        mksession! ~/vim/sessions/recover.vim
+    endif
+endfunction
+
+autocmd VimLeavePre * call s:SaveRecoverCond()
 
 function LoadSession()
     if line('.') isnot 1

@@ -18,10 +18,12 @@ if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
 endif
 shortmess_save = &shortmess
 set shortmess+=aoO
+badd +0 config/config.vim
 argglobal
 :%argdel
+edit config/config.vim
 argglobal
-enew
+balt config/config.vim
 setlocal fdm=manual
 setlocal fde=0
 setlocal fmr={{{,}}}
@@ -30,6 +32,16 @@ setlocal fdl=0
 setlocal fml=1
 setlocal fdn=20
 setlocal fen
+silent! normal! zE
+&fdl = &fdl
+{
+  var l: number = 9 - ((6 * winheight(0) + 13) / 26)
+  if l < 1 | l = 1 | endif
+  keepjumps exe ":" .. l
+  normal! zt
+  keepjumps :9
+  normal! 0
+}
 tabnext 1
 if wipebuf != -1 && len(win_findbuf(wipebuf)) == 0
   silent exe 'bwipe ' .. wipebuf

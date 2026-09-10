@@ -1,4 +1,4 @@
-let s:plugin_dir = expand('~/.vim/plugged')
+let s:plugin_dir = expand('~/.plugged')
 
 function! s:ensure(repo)
   let name = split(a:repo, '/')[-1]
