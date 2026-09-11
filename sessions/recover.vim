@@ -35,11 +35,11 @@ setlocal fen
 silent! normal! zE
 &fdl = &fdl
 {
-  var l: number = 36 - ((10 * winheight(0) + 6) / 12)
+  var l: number = 55 - ((12 * winheight(0) + 10) / 21)
   if l < 1 | l = 1 | endif
   keepjumps exe ":" .. l
   normal! zt
-  keepjumps :36
+  keepjumps :55
   normal! 0
 }
 tabnext 1

@@ -7,6 +7,13 @@ let lspServers = [
       \   filetype: ['vim'],
       \   path: 'vim-language-server',
       \   args: ['--stdio']
+      \ },
+      \ 
+      \ #{
+      \   name: 'clangd',
+      \   filetype: ['c', "c++", "cpp"],
+      \   path: 'clangd',
+      \   args: [],
       \ }
       \ ]
 
