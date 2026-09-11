@@ -12,18 +12,18 @@ var wipebuf: number = -1
 var shortmess_save: string
 silent only
 silent tabonly
-cd ~/vim
+cd ~/cprojects/hashmap
 if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
   wipebuf = bufnr('%')
 endif
 shortmess_save = &shortmess
 set shortmess+=aoO
-badd +0 config/config.vim
+badd +0 hashmap.c
 argglobal
 :%argdel
-edit config/config.vim
+:$argadd hashmap.c
+edit hashmap.c
 argglobal
-balt config/config.vim
 setlocal fdm=manual
 setlocal fde=0
 setlocal fmr={{{,}}}
@@ -35,11 +35,11 @@ setlocal fen
 silent! normal! zE
 &fdl = &fdl
 {
-  var l: number = 9 - ((6 * winheight(0) + 13) / 26)
+  var l: number = 36 - ((10 * winheight(0) + 6) / 12)
   if l < 1 | l = 1 | endif
   keepjumps exe ":" .. l
   normal! zt
-  keepjumps :9
+  keepjumps :36
   normal! 0
 }
 tabnext 1

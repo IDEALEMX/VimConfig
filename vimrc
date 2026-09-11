@@ -10,6 +10,10 @@ so ~/vim/config/keybinds.vim
 
 so ~/vim/config/lsp.vim
 
-"Custom script
+"Custom scripts
 so ~/vim/config/notetaker.vim
 so ~/vim/sessions/manager.vim
+
+"" Modes
+so ~/vim/modes/md-mode.vim
+so ~/vim/modes/c-mode.vim
