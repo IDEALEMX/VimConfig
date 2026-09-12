@@ -17,3 +17,4 @@ so ~/vim/sessions/manager.vim
 "" Modes
 so ~/vim/modes/md-mode.vim
 so ~/vim/modes/c-mode.vim
+so ~/vim/modes/zen-mode.vim

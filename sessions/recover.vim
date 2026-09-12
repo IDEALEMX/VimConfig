@@ -12,17 +12,17 @@ var wipebuf: number = -1
 var shortmess_save: string
 silent only
 silent tabonly
-cd ~/cprojects/hashmap
+cd ~/cprojects/linked
 if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
   wipebuf = bufnr('%')
 endif
 shortmess_save = &shortmess
 set shortmess+=aoO
-badd +0 hashmap.c
+badd +0 ll.c
 argglobal
 :%argdel
-:$argadd hashmap.c
-edit hashmap.c
+:$argadd ll.c
+edit ll.c
 argglobal
 setlocal fdm=manual
 setlocal fde=0
@@ -35,12 +35,12 @@ setlocal fen
 silent! normal! zE
 &fdl = &fdl
 {
-  var l: number = 55 - ((12 * winheight(0) + 10) / 21)
+  var l: number = 38 - ((7 * winheight(0) + 11) / 22)
   if l < 1 | l = 1 | endif
   keepjumps exe ":" .. l
   normal! zt
-  keepjumps :55
-  normal! 0
+  keepjumps :38
+  normal! 05|
 }
 tabnext 1
 if wipebuf != -1 && len(win_findbuf(wipebuf)) == 0
